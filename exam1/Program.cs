@@ -6,21 +6,19 @@
 
 // 23432 -> да
 
-Console.Write("Введите число: ");
-string? number = Console.ReadLine();
 
-void CheckingNumber(string number)
+Console.Write("Введи пятизначное число число: ");
+int x = Convert.ToInt32(Console.ReadLine());
+int a1 = x % 10;
+int a2 = x / 10 % 10;
+int a3 = x / 100 % 10;
+int a4 = x / 1000 % 10;
+int a5 = x / 10000;
+if (a1 == a5 && a2 == a4)
 {
-  if (number[0]==number[4] || number[1]==number[3])
-  {
-    Console.WriteLine($"Ваше число: {number} - палиндром.");
-  }
-  else Console.WriteLine($"Ваше число: {number} - НЕ палиндром.");
+    Console.Write($"число {x} является палиндромом");
 }
-
-if (number!.Length == 5)
+else
 {
-  CheckingNumber(number);
+    Console.Write($"число {x} не является палиндромом");
 }
-else Console.WriteLine($"Введи правильное число");
-
